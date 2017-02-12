@@ -1,0 +1,56 @@
+1、html5 + css3
+2、less
+3、Zepto
+
+数据是动态获取的 按照原理应该是从QQ腾讯服务器上获取 但是QQ禁用了外部域名的访问，所以我们自己把歌词内容放到本地，通过本地读取
+
+viewport  视口
+@import (reference) "public"; public 是不需要编译的
+reference 只是导入过来供我们调取使用 编译的时候不编译这里的代码
+ <script src="js/less-2.5.3.min.js"></script>  用来编译less 开发的时候用到  上线不用
+
+
+ html{
+   font-size: 100px;
+ }
+ 640px 1rem=100px
+
+
+ if(winW>=640){
+        $('.musicBox').css({
+            width:desW,
+            margin:'0 auto'
+        });
+        window.htmlFont=100;
+        return;
+    }
+    当屏幕宽度大于设计稿的宽度，让音乐区域最大640px即可
+
+
+
+ box-sizing: border-box; /*css3中新增加的盒子模型属性 默认是content-box：我们设置的width或者height仅仅是内容的宽高 border-box：我们设置的width或者height包含边框 填充 真实内容三部分*/
+
+
+ &.play 加上连字符就是 同时拥有这个样式
+ 不加连字符就是 传统的css样式里其中一个
+
+ /*超过一行自动裁切*/
+       text-overflow: ellipsis;
+       white-space: nowrap;
+       overflow: hidden;
+
+        background: url("../img/sprite_play.png") no-repeat;
+        background-size: .8rem 7rem;
+
+        整张雪碧图多大  就写多大
+==========================================================================
+1、获取音乐对应的歌词数据
+   -解析数据
+   1)把歌词内容中出现的&#32;...都替换成为应该表达的字符
+   2)使用正则进行匹配得到每一行中的具体内容
+
+2、绑定到页面中 把音乐的总时间也显示在页面中
+3、播放音乐
+4、控制音乐的暂停和播放
+5、控制歌词和我们的进度条以及时间随着音乐播放而改变
+6、
